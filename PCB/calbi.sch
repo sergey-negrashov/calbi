@@ -1214,15 +1214,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 <symbols>
-<symbol name="GND-ISO">
-<description>Isolated ground</description>
-<pin name="GND-ISO" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
-<wire x1="-2.032" y1="0" x2="2.032" y2="0" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="-0.762" x2="1.27" y2="-0.762" width="0.254" layer="94"/>
-<wire x1="-0.508" y1="-1.524" x2="0.508" y2="-1.524" width="0.254" layer="94"/>
-<text x="2.54" y="0" size="1.778" layer="96">&gt;VALUE</text>
-<wire x1="1.27" y1="2.032" x2="1.27" y2="0.508" width="0.254" layer="94"/>
-</symbol>
 <symbol name="FRAME_LEDGER">
 <wire x1="0" y1="0" x2="0" y2="279.4" width="0.4064" layer="94"/>
 <wire x1="0" y1="279.4" x2="431.8" y2="279.4" width="0.4064" layer="94"/>
@@ -1269,19 +1260,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="GND-ISO" prefix="GND-ISO">
-<description>Isolated ground</description>
-<gates>
-<gate name="G$1" symbol="GND-ISO" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="FRAME-LEDGER" prefix="FRAME">
 <description>&lt;b&gt;Schematic Frame&lt;/b&gt;&lt;p&gt;
 Standard 11x14 US Ledger frame</description>
@@ -1413,11 +1391,8 @@ End launch SMA connector. The paste layer has been removed so that the connector
 </classes>
 <parts>
 <part name="U1" library="calbi" deviceset="LT3086MPT7" device=""/>
-<part name="U$1" library="calbi" deviceset="AD8400ARZ100-ND" device="SOIC-8"/>
 <part name="C1" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="10uF"/>
-<part name="R2" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES"/>
-<part name="GND-ISO1" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
-<part name="GND-ISO2" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
+<part name="R2" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES" value="0 ohm"/>
 <part name="U$2" library="calbi" deviceset="AD9835" device=""/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LEDGER" device=""/>
 <part name="C3" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
@@ -1436,22 +1411,31 @@ End launch SMA connector. The paste layer has been removed so that the connector
 <part name="SUPPLY7" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="SUPPLY8" library="supply2" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="supply2" deviceset="GND" device=""/>
-<part name="GND-ISO3" library="SparkFun-Aesthetics" deviceset="GND-ISO" device=""/>
 <part name="SUPPLY11" library="supply2" deviceset="GND" device=""/>
 <part name="J$1" library="SparkFun-Connectors" deviceset="SMA_EDGE" device=""/>
 <part name="SUPPLY12" library="supply2" deviceset="GND" device=""/>
+<part name="C9" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP"/>
+<part name="R1" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES"/>
+<part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES"/>
+<part name="R5" library="SparkFun-Passives" deviceset="RESISTOR" device="0603-RES"/>
+<part name="SUPPLY1" library="supply2" deviceset="GND" device=""/>
+<part name="SUPPLY10" library="supply2" deviceset="GND" device=""/>
+<part name="SUPPLY13" library="supply2" deviceset="GND" device=""/>
+<part name="U$3" library="calbi" deviceset="AD8400ARZ100-ND" device="SOIC-8"/>
+<part name="C2" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="10uF"/>
+<part name="C10" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
+<part name="SUPPLY14" library="supply2" deviceset="GND" device=""/>
+<part name="SUPPLY15" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
+<part name="SUPPLY16" library="supply2" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="U1" gate="G$1" x="-35.56" y="129.54"/>
-<instance part="U$1" gate="G$1" x="20.32" y="147.32"/>
+<instance part="U1" gate="G$1" x="-38.1" y="129.54"/>
 <instance part="C1" gate="G$1" x="-73.66" y="134.62"/>
 <instance part="R2" gate="G$1" x="-50.8" y="111.76" rot="R90"/>
-<instance part="GND-ISO1" gate="G$1" x="-73.66" y="129.54"/>
-<instance part="GND-ISO2" gate="G$1" x="-88.9" y="129.54"/>
 <instance part="U$2" gate="G$1" x="-116.84" y="193.04"/>
 <instance part="FRAME1" gate="G$1" x="-223.52" y="-7.62"/>
 <instance part="FRAME1" gate="G$2" x="106.68" y="-7.62"/>
@@ -1471,41 +1455,26 @@ End launch SMA connector. The paste layer has been removed so that the connector
 <instance part="SUPPLY7" gate="G$1" x="-91.44" y="228.6"/>
 <instance part="SUPPLY8" gate="GND" x="-83.82" y="182.88"/>
 <instance part="SUPPLY9" gate="GND" x="-73.66" y="182.88"/>
-<instance part="GND-ISO3" gate="G$1" x="-38.1" y="104.14"/>
 <instance part="SUPPLY11" gate="GND" x="-167.64" y="205.74" rot="R270"/>
 <instance part="J$1" gate="1" x="-58.42" y="198.12" rot="R180"/>
 <instance part="SUPPLY12" gate="GND" x="-50.8" y="182.88"/>
+<instance part="C9" gate="G$1" x="114.3" y="129.54"/>
+<instance part="R1" gate="G$1" x="91.44" y="119.38" rot="R90"/>
+<instance part="R3" gate="G$1" x="119.38" y="104.14" rot="R90"/>
+<instance part="R5" gate="G$1" x="127" y="86.36" rot="R90"/>
+<instance part="SUPPLY1" gate="GND" x="-88.9" y="129.54"/>
+<instance part="SUPPLY10" gate="GND" x="-73.66" y="129.54"/>
+<instance part="SUPPLY13" gate="GND" x="-38.1" y="104.14"/>
+<instance part="U$3" gate="G$1" x="35.56" y="121.92" rot="MR0"/>
+<instance part="C2" gate="G$1" x="-12.7" y="134.62" rot="R180"/>
+<instance part="C10" gate="G$1" x="12.7" y="106.68"/>
+<instance part="SUPPLY14" gate="GND" x="20.32" y="93.98"/>
+<instance part="SUPPLY15" gate="G$1" x="12.7" y="139.7"/>
+<instance part="SUPPLY16" gate="GND" x="-12.7" y="111.76"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="GND-ISO" class="0">
-<segment>
-<pinref part="C1" gate="G$1" pin="2"/>
-<pinref part="GND-ISO1" gate="G$1" pin="GND-ISO"/>
-</segment>
-<segment>
-<pinref part="GND-ISO2" gate="G$1" pin="GND-ISO"/>
-<wire x1="-88.9" y1="132.08" x2="-88.9" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="IN"/>
-<wire x1="-45.72" y1="139.7" x2="-53.34" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="-53.34" y1="139.7" x2="-73.66" y2="139.7" width="0.1524" layer="91"/>
-<wire x1="-88.9" y1="139.7" x2="-73.66" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="!SHDN"/>
-<wire x1="-45.72" y1="134.62" x2="-53.34" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="-53.34" y1="134.62" x2="-53.34" y2="139.7" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<wire x1="-38.1" y1="106.68" x2="-22.86" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="106.68" x2="-22.86" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="GND"/>
-<wire x1="-22.86" y1="121.92" x2="-25.4" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="GND-ISO3" gate="G$1" pin="GND-ISO"/>
-<pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="-50.8" y1="106.68" x2="-38.1" y2="106.68" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="3.3V" class="0">
 <segment>
 <pinref part="SUPPLY7" gate="G$1" pin="3.3V"/>
@@ -1527,6 +1496,14 @@ End launch SMA connector. The paste layer has been removed so that the connector
 <wire x1="-142.24" y1="205.74" x2="-142.24" y2="190.5" width="0.1524" layer="91"/>
 <pinref part="SUPPLY3" gate="G$1" pin="3.3V"/>
 <wire x1="-142.24" y1="190.5" x2="-152.4" y2="190.5" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="VDD"/>
+<wire x1="20.32" y1="137.16" x2="12.7" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="137.16" x2="12.7" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="C10" gate="G$1" pin="1"/>
+<pinref part="SUPPLY15" gate="G$1" pin="3.3V"/>
+<wire x1="12.7" y1="139.7" x2="12.7" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -1592,6 +1569,46 @@ End launch SMA connector. The paste layer has been removed so that the connector
 <pinref part="J$1" gate="1" pin="GND@0"/>
 <wire x1="-55.88" y1="203.2" x2="-50.8" y2="203.2" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<wire x1="-88.9" y1="132.08" x2="-88.9" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="IN"/>
+<wire x1="-48.26" y1="139.7" x2="-53.34" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<wire x1="-53.34" y1="139.7" x2="-73.66" y2="139.7" width="0.1524" layer="91"/>
+<wire x1="-88.9" y1="139.7" x2="-73.66" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="!SHDN"/>
+<wire x1="-48.26" y1="134.62" x2="-53.34" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="-53.34" y1="134.62" x2="-53.34" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="SUPPLY1" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C1" gate="G$1" pin="2"/>
+<pinref part="SUPPLY10" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<wire x1="-50.8" y1="106.68" x2="-38.1" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="-38.1" y1="106.68" x2="-22.86" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="-22.86" y1="106.68" x2="-22.86" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="GND"/>
+<wire x1="-22.86" y1="121.92" x2="-27.94" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="SUPPLY13" gate="GND" pin="GND"/>
+<junction x="-38.1" y="106.68"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="GND"/>
+<wire x1="20.32" y1="114.3" x2="20.32" y2="99.06" width="0.1524" layer="91"/>
+<pinref part="SUPPLY14" gate="GND" pin="GND"/>
+<pinref part="C10" gate="G$1" pin="2"/>
+<wire x1="20.32" y1="99.06" x2="20.32" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="104.14" x2="12.7" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="12.7" y1="99.06" x2="20.32" y2="99.06" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C2" gate="G$1" pin="1"/>
+<pinref part="SUPPLY16" gate="GND" pin="GND"/>
+<wire x1="-12.7" y1="129.54" x2="-12.7" y2="114.3" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$4" class="0">
 <segment>
@@ -1615,7 +1632,7 @@ End launch SMA connector. The paste layer has been removed so that the connector
 <net name="N$2" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="IMON/ILIM"/>
-<wire x1="-45.72" y1="119.38" x2="-50.8" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="-48.26" y1="119.38" x2="-50.8" y2="119.38" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="-50.8" y1="119.38" x2="-50.8" y2="116.84" width="0.1524" layer="91"/>
 </segment>
@@ -1640,6 +1657,25 @@ End launch SMA connector. The paste layer has been removed so that the connector
 <wire x1="-73.66" y1="198.12" x2="-63.5" y2="198.12" width="0.1524" layer="91"/>
 <junction x="-73.66" y="198.12"/>
 <pinref part="J$1" gate="1" pin="SIGNAL"/>
+</segment>
+</net>
+<net name="N$10" class="0">
+<segment>
+<pinref part="U$3" gate="G$1" pin="B1"/>
+<wire x1="20.32" y1="121.92" x2="-20.32" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="-20.32" y1="121.92" x2="-20.32" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="SET"/>
+<wire x1="-20.32" y1="129.54" x2="-27.94" y2="129.54" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="OUT"/>
+<pinref part="C2" gate="G$1" pin="2"/>
+<wire x1="-27.94" y1="137.16" x2="-12.7" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="-12.7" y1="137.16" x2="5.08" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="137.16" x2="5.08" y2="127" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="127" x2="22.86" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
