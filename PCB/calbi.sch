@@ -2482,13 +2482,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="SUPPLY20" gate="GND" x="-154.94" y="119.38"/>
 <instance part="R1" gate="G$1" x="-58.42" y="114.3" rot="R90"/>
 <instance part="R3" gate="G$1" x="-58.42" y="99.06" rot="R90"/>
-<instance part="SUPPLY21" gate="GND" x="-58.42" y="88.9"/>
+<instance part="SUPPLY21" gate="GND" x="-58.42" y="83.82"/>
 <instance part="R5" gate="G$1" x="-35.56" y="114.3" rot="R90"/>
 <instance part="R7" gate="G$1" x="-35.56" y="99.06" rot="R90"/>
-<instance part="SUPPLY22" gate="GND" x="-35.56" y="88.9"/>
+<instance part="SUPPLY22" gate="GND" x="-35.56" y="83.82"/>
 <instance part="R8" gate="G$1" x="-10.16" y="114.3" rot="R90"/>
 <instance part="R9" gate="G$1" x="-10.16" y="99.06" rot="R90"/>
-<instance part="SUPPLY23" gate="GND" x="-10.16" y="88.9"/>
+<instance part="SUPPLY23" gate="GND" x="-10.16" y="83.82"/>
 <instance part="SUPPLY24" gate="G$1" x="40.64" y="218.44"/>
 <instance part="J1" gate="G$1" x="17.78" y="213.36"/>
 <instance part="J2" gate="G$1" x="127" y="248.92" rot="R180"/>
@@ -2686,6 +2686,21 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C9" gate="G$1" pin="2"/>
 <pinref part="SUPPLY15" gate="GND" pin="GND"/>
 <wire x1="-96.52" y1="114.3" x2="-96.52" y2="111.76" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R7" gate="G$1" pin="1"/>
+<wire x1="-35.56" y1="93.98" x2="-35.56" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="SUPPLY22" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R9" gate="G$1" pin="1"/>
+<wire x1="-10.16" y1="93.98" x2="-10.16" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="SUPPLY23" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="-58.42" y1="93.98" x2="-58.42" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="SUPPLY21" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -2914,24 +2929,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="-58.42" y1="106.68" x2="-58.42" y2="104.14" width="0.1524" layer="91"/>
 <junction x="-58.42" y="106.68"/>
-</segment>
-</net>
-<net name="N$9" class="0">
-<segment>
-<pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="-58.42" y1="93.98" x2="-58.42" y2="88.9" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$12" class="0">
-<segment>
-<pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="-35.56" y1="93.98" x2="-35.56" y2="88.9" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$13" class="0">
-<segment>
-<pinref part="R9" gate="G$1" pin="1"/>
-<wire x1="-10.16" y1="93.98" x2="-10.16" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="\SHDN" class="0">
